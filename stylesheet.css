@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* Background*/
+
+body{
+    background: linear-gradient(to left, #291e68, #742b6e);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/*Login Panel*/
+
+.panel{
+    background: linear-gradient(120deg, #2980b9, #8c32b3);
+    border-radius: 15px;
+    padding: 30px 40px;
+    width: 100%;
+    box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.5);
+}
+
+.panel h1{
+    text-align: center;
+    color: white;
+    font-family: Roboto, sans-serif;
+    font-size: 36px;
+    
+    
+}
+.panel h5{
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid #e1f1ff;
+    font-family: Roboto, sans-serif;
+    padding-bottom: 30px;
+}
+
+
+
+.panel form{
+    padding: 0 10px;
+}
+
+form .entry{    
+    position: relative;
+    margin:30px;
+    
+}
+
+.entry input{
+    background-color: transparent;
+    padding: 15px 0px;
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    border: transparent;
+    color: white;
+    outline: none;
+    border-bottom: 2px solid white;
+    text-indent: 5px;
+}
+
+.entry label{
+    position: absolute;
+    top: 60%;
+    left: 5px;
+    color: white; 
+    font-size: 14px;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    font-family: Roboto, sans-serif;
+}
+
+.entry span::before{
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background:#6398fa;
+    transition: 0.5s;
+}
+
+.entry input:focus ~ label,
+.entry input:valid ~ label{
+    top: -20%;
+    color: #99bcfd;
+}
+
+.entry input:focus ~ span::before,
+.entry input:valid ~ span::before{
+width: 100%;
+}
+
+.forg-pass{
+    margin: -25px 0px 30px 30px;
+    font-size: 12px;
+    font-family: Roboto, sans-serif;
+    color: rgb(235, 235, 235);
+    cursor: pointer;
+    transform: translateX(75px);
+}
+
+.forg-pass:hover{
+    text-decoration: underline;
+    color:#6398fa;
+    
+}
+
+button{ 
+    display: flex;
+    width: 40%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg,#755bea,#ff72c0);
+    transform: translateX(75%);
+    border: none;
+    overflow: hidden;
+    box-shadow : 0 4px 8px 0 rgb(0, 0, 0, 0.3);
+}
+
+button::before{
+    content: "";
+    position: absolute;
+    background-color: #EEE;
+    padding: 50%;
+    border-radius: 50%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+button:hover{
+    box-shadow: 0 3px 3px 0 black;
+    margin-top: 10px;
+    color:#072357;
+    cursor: pointer;
+    transform: translatex(75%) translateY(0px);
+}
+
+button:active::before{
+    
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+button:active{
+    transform: translateX(75%) translateY(2px) scale(0.95);
+
+}
+
+/*Login Panel animation*/
+
+.panel {  
+    animation: panel 1s ease-out forwards;
+  }
+  
+  @keyframes panel {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    80%{
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+
+/*Background animation*/
+
+  .box-area, .box-area2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .box-area li{
+      position: absolute;
+      display: block;
+      list-style: none;
+      width: 25px;
+      height: 25px;
+      padding: 50%;
+      background: none;
+      border:2px solid rgb(56, 56, 179);
+      animation: animate 20s linear infinite;
+      bottom: -100px;  
+      overflow: hidden;
+        
+  }
+
+  .box-area2 li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    padding: 50%;
+    background: none;
+    border:2px solid rgb(56, 56, 179);
+    animation: animate2 20s linear infinite;
+    top: -100px;  
+    overflow: hidden;
+      
+}
+
+
+  .box-area li:nth-child(1)
+  {
+      left: 84%;
+      width: 80px;
+      height: 80px;
+      animation-duration: 22s;
+  }
+
+  .box-area li:nth-child(2)
+  {
+      left: 12%;
+      width: 30px;
+      height: 30px;
+ 
+      animation-duration: 10s;
+  }
+  .box-area li:nth-child(3)
+  {
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      animation-duration: 15s;
+  }
+  .box-area li:nth-child(4)
+  {
+      left: 30%;
+      width: 55px;
+      height: 55px;
+      animation-duration: 16s;
+  }
+  .box-area li:nth-child(5)
+  {
+      left: 65%;
+      width: 40px;
+      height: 40px;
+      animation-duration: 18s;
+  }
+  .box-area li:nth-child(5)
+  {
+      left: 20%;
+      width: 110px;
+      height: 110px;
+      animation-duration: 25s;
+  }
+
+  @keyframes animate{
+     0%{
+         transform: translateY(0) rotate(0deg);
+         opacity: 1;
+     }
+     
+     100%{
+         transform: translateY(-800px) rotate(360deg);
+         opacity: 0;
+     }
+  }
+
+
+  .box-area2 li:nth-child(1)
+  {
+      right: 35%;
+      width: 80px;
+      height: 80px;
+      animation-duration: 17s;
+     
+  }
+
+  .box-area2 li:nth-child(2)
+  {
+      right: 12%;
+      width: 30px;
+      height: 30px;
+      animation-duration: 20s;
+  }
+  .box-area2 li:nth-child(3)
+  {
+      right: 70%;
+      width: 150px;
+      height: 150px;
+      animation-duration: 16s;
+      
+  }
+  .box-area2 li:nth-child(4)
+  {
+      right: 45%;
+      width: 55px;
+      height: 55px;
+      animation-duration: 12s;
+  }
+
+  @keyframes animate2{
+     0%{
+         transform: translateY(0) rotate(0deg);
+         opacity: 1;
+     }
+     
+     100%{
+         transform: translateY(800px) rotate(-360deg);
+         opacity: 0;
+     }
+  }
+
+
+  @media(max-width: 700px){
+    .box-area li:nth-child(2n){
+        border: none;
+    }
+    .box-area2 li:nth-child(2n){
+        border: none;
+    }
+  }
+
+
+
+
+
+
+
